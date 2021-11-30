@@ -40,7 +40,7 @@ def my_link():
 
       return render_template('index.html', ciphertext=ciphertext, plaintext=plaintext)
     except Exception:
-      return render_template('index.html', ciphertext="ERROR! PLEASE TRY AGAIN! (MAKE SURE TO SELECT ALL INPUTS)", plaintext="N/A")
+      return render_template('index.html', ciphertext="ERROR! PLEASE TRY AGAIN! (MAKE SURE TO SELECT ALL INPUTS)", plaintext="")
 
 @app.route('/my-link-new/', methods=['POST', 'GET'])
 def my_link_new():
@@ -55,6 +55,6 @@ def my_link_new():
 
     return render_template('index.html', publicKey=publicKey, privateKey=privateKey, encMessage=encMessage, decMessage=decMessage)
   except Exception:
-    return render_template('index.html', publicKey="ERROR! PLEASE TRY AGAIN! (MAKE SURE INPUT IS UNDER 22 CHARACTERS)", privateKey="N/A", encMessage="N/A", decMessage="N/A")
+    return render_template('index.html', publicKey="ERROR! PLEASE TRY AGAIN! (MAKE SURE INPUT IS UNDER 22 CHARACTERS)", privateKey="", encMessage="", decMessage="")
 if __name__ == '__main__':
   app.run(debug=True)
